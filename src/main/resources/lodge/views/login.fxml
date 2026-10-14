@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lodge.controller.LoginController" styleClass="login-root" alignment="CENTER">
+  <HBox maxWidth="900" styleClass="login-shell">
+    <VBox spacing="22" prefWidth="480" styleClass="login-form">
+      <padding><Insets top="46" right="44" bottom="42" left="44"/></padding>
+      <VBox spacing="5"><Label text="HOTELOOK" styleClass="brand-mark"/><Label text="Your stay starts here." styleClass="login-title"/><Label text="Book a room, view your bill, and manage your stay in one place." styleClass="muted-text" wrapText="true"/></VBox>
+      <Separator/>
+      <VBox spacing="7"><Label text="GUEST FULL NAME / ADMIN USERNAME" styleClass="field-label"/><TextField fx:id="usernameField" promptText="Your full name or admin"/></VBox>
+      <fx:define><ToggleGroup fx:id="roleGroup"/></fx:define>
+      <VBox spacing="10"><Label text="CONTINUE AS" styleClass="field-label"/><HBox spacing="22"><RadioButton fx:id="guestRadio" text="Guest" selected="true" toggleGroup="$roleGroup"/><RadioButton fx:id="ownerRadio" text="Admin" toggleGroup="$roleGroup"/></HBox></VBox>
+      <VBox spacing="7"><Label text="ADMIN PASSWORD" styleClass="field-label"/><PasswordField fx:id="passwordField" promptText="Required for admin access"/></VBox>
+      <Button text="Continue to Hotelook  →" onAction="#handleLogin" styleClass="primary-button" maxWidth="Infinity"/>
+      <Label fx:id="errorLabel" wrapText="true" styleClass="message-error"/>
+      <Label text="Private lodge workspace · ZMW billing" styleClass="small-muted"/>
+    </VBox>
+    <VBox alignment="BOTTOM_LEFT" spacing="18" styleClass="login-brand-panel" HBox.hgrow="ALWAYS">
+      <padding><Insets top="40" right="38" bottom="38" left="38"/></padding>
+      <Region VBox.vgrow="ALWAYS"/>
+      <Label text="A BETTER STAY STARTS HERE" styleClass="gold-eyebrow"/>
+      <Label text="Comfortable stays.\nClear, simple booking." styleClass="hero-title" wrapText="true"/>
+      <Label text="Explore room prices, book your dates, and keep track of your bill and receipt." styleClass="hero-copy" wrapText="true"/>
+      <HBox spacing="12" styleClass="hero-stat-row"><VBox spacing="4"><Label text="CURRENCY" styleClass="hero-stat-label"/><Label text="ZMW · K" styleClass="hero-stat-value"/></VBox><Separator orientation="VERTICAL"/><VBox spacing="4"><Label text="BUILT FOR" styleClass="hero-stat-label"/><Label text="Lodge teams" styleClass="hero-stat-value"/></VBox></HBox>
+    </VBox>
+  </HBox>
+</StackPane>
